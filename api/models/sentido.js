@@ -1,15 +1,15 @@
 const mongoose = require('mongoose')
 
-const paradaSchema = new mongoose.Schema({
+const sentidoSchema = new mongoose.Schema({
+    sentido: {
+        type: Number,
+        required: true,
+        trim: true
+    },
     nombre: {
         type: String,
         required: true,
         trim: true
-    },
-    coordenadas:{
-        type: [String],
-        required: true,
-        trim: true 
     },
     lineas: [{
         linea: {
@@ -19,6 +19,6 @@ const paradaSchema = new mongoose.Schema({
     }]
 })
 
-const Parada = mongoose.model('Parada', paradaSchema)
+const Sentido = mongoose.model('Sentido', sentidoSchema)
 
-module.exports = Parada
+module.exports = Sentido

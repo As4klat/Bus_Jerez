@@ -1,5 +1,6 @@
 const express = require('express')
 const Curso = require('../models/parada')
+const Sentido = require('../models/sentido')
 const router = new express.Router()
 const auth = require('../middleware/auth')
 

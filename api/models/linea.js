@@ -6,6 +6,12 @@ const lineaSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
+    paradas: [{
+        parada: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Parada'
+        }
+    }]
 })
 
 const Linea = mongoose.model('Linea', lineaSchema)
