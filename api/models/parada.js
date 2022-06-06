@@ -11,12 +11,25 @@ const paradaSchema = new mongoose.Schema({
         required: true,
         trim: true 
     },
-    lineas: [{
-        linea: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Linea'
-        }  
-    }]
+    lineas: {
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: 'Linea'
+    },
+    horariolaborales: {
+        type: [String],
+        required: true,
+        trim: true
+    },
+    horariosabados: {
+        type: [String],
+        required: true,
+        trim: true
+    },
+    horariodomingosyfestivos: {
+        type: [String],
+        required: true,
+        trim: true
+    }
 })
 
 const Parada = mongoose.model('Parada', paradaSchema)

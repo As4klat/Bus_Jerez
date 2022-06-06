@@ -5,30 +5,34 @@
         <ion-buttons slot="start">
           <ion-menu-button color="primary"></ion-menu-button>
         </ion-buttons>
-        <ion-title>{{ $route.params.id }}</ion-title>
+        <ion-title>{{ this.name }}</ion-title>
       </ion-toolbar>
     </ion-header>
     
     <ion-content :fullscreen="true">
       <ion-header collapse="condense">
         <ion-toolbar>
-          <ion-title size="large">{{ $route.params.id }}</ion-title>
+          <ion-title size="large">{{ this.name }}</ion-title>
         </ion-toolbar>
       </ion-header>
     
       <div id="container">
-        <strong class="capitalize">{{ $route.params.id }}</strong>
+        <strong class="capitalize">{{ this.name }}</strong>
+        <br>
+        <strong>{{ this.result }}</strong>
       </div>
     </ion-content>
   </ion-page>
 </template>
 
 <script lang="ts">
+import axios from "axios";
 import { defineComponent } from 'vue';
 import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { page } from "../controllador/PageChange"
 
 export default defineComponent({
-  name: 'FolderPage',
+  name: 'Rutas',
   components: {
     IonButtons,
     IonContent,
@@ -37,6 +41,17 @@ export default defineComponent({
     IonPage,
     IonTitle,
     IonToolbar
+  },
+  data() {
+    let name = 'Rutas'
+    let result:any
+    return {
+      name,
+      result,
+    };
+  },
+  async mounted() {
+    this.result = await page.LoadData(this.name.toLowerCase())
   }
 });
 </script>

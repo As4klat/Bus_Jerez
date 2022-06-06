@@ -48,37 +48,37 @@ export default defineComponent({
     const appPages = [
       {
         title: 'Mapa',
-        url: '/folder/map',
+        url: '/mapa',
         iosIcon: mapOutline,
         mdIcon: mapSharp
       },
       {
         title: 'Rutas',
-        url: '/folder/rutas',
+        url: '/rutas',
         iosIcon: paperPlaneOutline,
         mdIcon: paperPlaneSharp
       },
       {
         title: 'Paradas',
-        url: '/folder/paradas',
+        url: '/paradas',
         iosIcon: golfOutline,
         mdIcon: golfSharp
       },
       {
         title: 'Lineas',
-        url: '/folder/lineas',
+        url: '/lineas',
         iosIcon: busOutline,
         mdIcon: busSharp
       },
       {
         title: 'Horarios',
-        url: '/folder/horarios',
+        url: '/horarios',
         iosIcon: timeOutline,
         mdIcon: timeSharp
       }
     ];
     
-    const path = window.location.pathname.split('folder/')[1];
+    const path = window.location.pathname.split('/')[1];
     if (path !== undefined) {
       selectedIndex.value = appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }

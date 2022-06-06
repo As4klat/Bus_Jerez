@@ -4,12 +4,28 @@ import { RouteRecordRaw } from 'vue-router';
 const routes: Array<RouteRecordRaw> = [
   {
     path: '',
-    redirect: '/folder/map'
+    redirect: '/mapa'
   },
   {
-    path: '/folder/:id',
-    component: () => import ('../views/FolderPage.vue')
-  }
+    path: '/mapa',
+    component: () => import ('../views/Mapa.vue')
+  },
+  {
+    path: '/rutas',
+    component: () => import ('../views/Rutas.vue')
+  },
+  {
+    path: '/paradas',
+    component: () => import ('../views/Paradas.vue')
+  },
+  {
+    path: '/lineas',
+    component: () => import ('../views/Lineas.vue')
+  },
+  {
+    path: '/horarios',
+    component: () => import ('../views/Horarios.vue')
+  },
 ]
 
 const router = createRouter({
