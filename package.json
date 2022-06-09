@@ -17,6 +17,7 @@
     "@capacitor/haptics": "1.1.4",
     "@capacitor/keyboard": "1.2.2",
     "@capacitor/status-bar": "1.0.8",
+    "@googlemaps/js-api-loader": "^1.14.3",
     "@ionic/vue": "^6.0.0",
     "@ionic/vue-router": "^6.0.0",
     "axios": "^0.27.2",
@@ -25,6 +26,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "google-maps-api-loader": "^1.1.1",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^4.5.0",
     "mongoose": "^6.3.0",
@@ -35,6 +37,7 @@
   },
   "devDependencies": {
     "@capacitor/cli": "3.4.3",
+    "@types/google.maps": "^3.49.2",
     "@types/jest": "^27.0.2",
     "@typescript-eslint/eslint-plugin": "^5.6.0",
     "@typescript-eslint/parser": "^5.6.0",
