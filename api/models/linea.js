@@ -6,7 +6,8 @@ const lineaSchema = new mongoose.Schema({
     nombre: {
         type: String,
         required: true,
-        trim: true
+        trim: true,
+        unique: true
     },
     paradasPrimerSentido: {
         type: [mongoose.Schema.Types.ObjectId],
@@ -28,8 +29,8 @@ const lineaSchema = new mongoose.Schema({
 
 lineaSchema.post('save', async function (next) {
     
-    const paradalist = this.paradasPrimerSentido
-    paradalist.forEach(async e => {
+    const paradalistPS = this.paradasPrimerSentido
+    paradalistPS.forEach(async e => {
         let parada = await Parada.findOne({_id: e._id})
         if(!parada.lineas.includes(this._id)){
             parada.lineas.push(this._id)
@@ -37,7 +38,16 @@ lineaSchema.post('save', async function (next) {
         parada.save()
     })
 
-    next()
+    const paradalistSS = this.paradasSegundoSentido
+    paradalistSS.forEach(async e => {
+        let parada = await Parada.findOne({_id: e._id})
+        if(!parada.lineas.includes(this._id)){
+            parada.lineas.push(this._id)
+        }
+        parada.save()
+    })
+
+    next
 })
 
 const Linea = mongoose.model('Linea', lineaSchema)

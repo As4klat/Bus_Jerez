@@ -4,7 +4,7 @@ const webscrap = require('./app/helpers/webscraping')
 const timer = require('./app/helpers/timebucle')
 require('./db/mongoose')
 
-webscrap
+webscrap()
 
 const lineaRouter = require('./routers/linea')
 const paradaRouter = require('./routers/parada')
@@ -12,7 +12,7 @@ const paradaRouter = require('./routers/parada')
 const app = express()
 
 const host = config.HOST
-const port = config.PORT
+const port = config.PORTAPI
 
 app.use(express.json())
 app.use(lineaRouter)

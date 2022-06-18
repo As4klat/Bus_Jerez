@@ -1,4 +1,0 @@
-class Linea {
-    constructor() {
-    }
-}

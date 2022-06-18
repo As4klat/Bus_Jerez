@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const paradaSchema = new mongoose.Schema({
     nombre: {
         type: String,
+        unique:true,
         required: true,
         trim: true
     },
