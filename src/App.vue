@@ -25,7 +25,7 @@
 import { IonApp, IonContent, IonIcon, IonItem, IonLabel, IonList, IonListHeader, IonMenu, IonMenuToggle, IonNote, IonRouterOutlet, IonSplitPane } from '@ionic/vue';
 import { defineComponent, ref } from 'vue';
 import { useRoute } from 'vue-router';
-import { archiveOutline, archiveSharp, bookmarkOutline, bookmarkSharp, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp, mapOutline,mapSharp,busOutline,busSharp, golfOutline, golfSharp, timeOutline, timeSharp} from 'ionicons/icons';
+import { archiveOutline, archiveSharp, bookmarkOutline, bookmarkSharp, heartOutline, heartSharp, mailOutline, mailSharp, trashOutline, trashSharp, warningOutline, warningSharp, mapOutline,mapSharp,busOutline,busSharp, golfOutline, golfSharp, timeOutline, timeSharp} from 'ionicons/icons';
 
 export default defineComponent({
   name: 'App',
@@ -41,7 +41,7 @@ export default defineComponent({
     IonMenuToggle, 
     IonNote, 
     IonRouterOutlet, 
-    IonSplitPane,
+    IonSplitPane
   },
   setup() {
     const selectedIndex = ref(0);
@@ -51,12 +51,6 @@ export default defineComponent({
         url: '/mapa',
         iosIcon: mapOutline,
         mdIcon: mapSharp
-      },
-      {
-        title: 'Rutas',
-        url: '/rutas',
-        iosIcon: paperPlaneOutline,
-        mdIcon: paperPlaneSharp
       },
       {
         title: 'Paradas',
@@ -96,8 +90,6 @@ export default defineComponent({
       heartSharp, 
       mailOutline, 
       mailSharp, 
-      paperPlaneOutline, 
-      paperPlaneSharp, 
       trashOutline, 
       trashSharp, 
       warningOutline, 

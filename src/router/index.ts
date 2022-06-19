@@ -11,10 +11,6 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import ('../views/Mapa.vue')
   },
   {
-    path: '/rutas',
-    component: () => import ('../views/Rutas.vue')
-  },
-  {
     path: '/paradas',
     component: () => import ('../views/Paradas.vue')
   },

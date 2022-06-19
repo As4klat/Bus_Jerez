@@ -5,7 +5,7 @@ class PageChange {
         switch(ruta){
             case "lineas": {
                 try {
-                    let res = await axios.get(`http://127.0.0.1/api/${ruta}`);
+                    let res = await axios.get(`http://127.0.0.1:3000/api/${ruta}`);
                     data = res.data
                 } catch (error) {
                     data = error
@@ -14,7 +14,7 @@ class PageChange {
             }
             case "paradas": {
                 try {
-                    let res = await axios.get(`http://127.0.0.1/api/${ruta}`);
+                    let res = await axios.get(`http://127.0.0.1:3000/api/${ruta}`);
                     data = res.data
                 } catch (error) {
                     data = error

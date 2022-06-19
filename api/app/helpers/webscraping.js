@@ -3,6 +3,7 @@ const request = require('request-promise')
 const config = require('../../global')
 const Parada = require('../../models/parada')
 const Linea = require('../../models/linea')
+const capitalizarPrimeraLetra = require('./capitalizarPrimeraLetra')
 
 const url = config.URLBUS
 const urls = []
@@ -24,7 +25,9 @@ const webscrap = async () => {
 
 async function scrapLinea(url) {
     let arr = url.split("/");
-    const nombreLinea = arr[5]
+    var nombreLinea = arr[5]
+    nombreLinea = nombreLinea.replace("-", " ")
+    nombreLinea = capitalizarPrimeraLetra(nombreLinea)
     const $ = await request({
         uri: url,
         transform: body => cheerio.load(body)
